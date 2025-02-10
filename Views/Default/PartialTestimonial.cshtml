@@ -1,0 +1,73 @@
+﻿@model List<AcunMedyaPortfolio.Models.TBlTestimonial>
+
+<section class="ftco-section testimony-section bg-primary">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section heading-section-white text-center ftco-animate">
+                <span class="subheading">Referanslarım</span>
+                <h2 class="mb-4">Hakkımda yapılan yorumlar</h2>
+            </div>
+        </div>
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <div class="item d-flex justify-content-center">
+                            <div class="testimony-wrap py-4 d-flex flex-column justify-content-between align-items-center text-center">
+                                <div class="text w-100">
+                                    <span class="fa fa-quote-left"></span>
+                                    <p class="mb-4 pl-5">@item.TestimonialDescription</p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <div class="user-img" style="background-image: url(@item.TestimonialmageUrl)"></div>
+                                        <div class="pl-3">
+                                            <p class="name">@item.TestimonialName</p>
+                                            <span class="position">@item.TestimonialTitle</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .testimony-wrap {
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .carousel-testimony .item {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .user-img {
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+</style>

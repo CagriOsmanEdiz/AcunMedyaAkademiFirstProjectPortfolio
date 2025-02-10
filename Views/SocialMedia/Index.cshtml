@@ -1,0 +1,29 @@
+﻿@model List<AcunMedyaPortfolio.Models.TblSocialMedia>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>SOSYAL MEDYA</h3>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Link</th>
+        <th>Sosyal Medya İsmi</th>
+        <th>İkon</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+  @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.SocialMediaID</td>
+            <td>@item.Url</td>
+            <td>@item.SocialMediaName</td>
+            <td>@item.</td>
+            <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/SocialMedia/CreateSocialMedia" class="btn btn-success">Yeni Sosyal Medya Ekle</a>
